@@ -27,7 +27,8 @@
 
 # === IMAGEN BASE ===
 # TODO: Cambiar esta imagen base (debian:13-slim es más moderna y segura)
-FROM debian:11-slim
+#FROM debian:11-slim
+FROM debian:10
 
 # === INSTALACIÓN DE PAQUETES ===
 # Cada RUN es una capa nueva → imagen más grande, cache ineficiente
@@ -52,7 +53,7 @@ COPY index.html /var/www/html/index.html
 # TODO: Eliminar esta línea (no debe quedar rastro del host)
 RUN uname -a > /etc/banner.txt
 
-EXPOSE 80
+EXPOSE 22 80 443
 
 # === COMANDO DE INICIO ===
 # TODO: Reemplazar por un comando seguro
