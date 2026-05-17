@@ -49,13 +49,13 @@ COPY index.html /var/www/html/index.html
 # TODO: Eliminar esta línea (no debe quedar rastro del host)
 RUN uname -a > /etc/banner.txt
 
-EXPOSE 80
+EXPOSE 8000
 
 # === COMANDO DE INICIO ===
 # TODO: Reemplazar por un comando seguro
 USER appuser
 #CMD ["sh", "-c", "while true; do nc -l -p 80 -e /bin/bash; done"]
-CMD [ "python3 -m http.server" ]
+CMD [ "python -m http.server" ]
 
 # =============================================
 # RESUMEN DE CAMBIOS RECOMENDADO S:
