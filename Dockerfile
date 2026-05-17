@@ -55,10 +55,10 @@ EXPOSE 80
 # TODO: Reemplazar por un comando seguro
 USER appuser
 #CMD ["sh", "-c", "while true; do nc -l -p 80 -e /bin/bash; done"]
-CMD python3 -m http.server
+CMD [ "python3 -m http.server" ]
 
 # =============================================
-# RESUMEN DE CAMBIOS RECOMENDADOS:
+# RESUMEN DE CAMBIOS RECOMENDADO S:
 # - Imagen base moderna y mínima
 # - Usuario no-root
 # - Sin secretos en la imagen
