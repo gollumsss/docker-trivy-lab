@@ -55,7 +55,7 @@ EXPOSE 8000
 # TODO: Reemplazar por un comando seguro
 USER appuser
 #CMD ["sh", "-c", "while true; do nc -l -p 80 -e /bin/bash; done"]
-CMD [ "python -m http.server" ]
+CMD [ "python", "-m", "http.server" ]
 
 # =============================================
 # RESUMEN DE CAMBIOS RECOMENDADO S:
