@@ -55,7 +55,7 @@ EXPOSE 8000
 # TODO: Reemplazar por un comando seguro
 USER appuser
 #CMD ["sh", "-c", "while true; do nc -l -p 80 -e /bin/bash; done"]
-WORKDIR 
+WORKDIR /var/www/html
 CMD [ "python3", "-m", "http.server" ]
 
 # =============================================
