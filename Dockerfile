@@ -32,7 +32,7 @@ FROM debian:13-slim
 
 # === INSTALACIÓN DE PAQUETES ===
 # Cada RUN es una capa nueva → imagen más grande, cache ineficiente
-RUN apt-get update && apt-get install -y openssl && apt-get install -y python3 && apt-get install -y netcat-traditional && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends openssl python3 libpython3.13-minimal && rm -rf /var/lib/apt/lists/*
 
 # Sin rm -rf /var/lib/apt/lists/* → la caché de apt se queda en la imagen
 
@@ -47,7 +47,7 @@ COPY index.html /var/www/html/index.html
 
 # === INFORMACIÓN DEL SISTEMA ===
 # TODO: Eliminar esta línea (no debe quedar rastro del host)
-RUN uname -a > /etc/banner.txt
+#RUN uname -a > /etc/banner.txt
 
 EXPOSE 8000
 
